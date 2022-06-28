@@ -122,10 +122,11 @@ p {
 body {
     font-family: 'League Spartan', sans-serif;
     font-size: var(--fs-400);
-    color: hsl( var(--clr-white) );
     background-color: hsl( var(--clr-main-bg-blue));
     line-height: 1.5;
     min-height: 100vh;
+    max-width: 33.75rem;
+    margin-inline: auto;
     
     display: grid;
     grid-template-rows: min-content 1fr;
@@ -188,7 +189,7 @@ select {
 .container {
     padding-inline: 2em;
     margin-inline: auto;
-    max-width: 80rem;
+    max-width: 33.75rem;
 }
 
 .sr-only {
@@ -265,7 +266,7 @@ select {
 
 .uppercase { text-transform: uppercase; }
 
-.fs-800 { font-size: var(--fs-800); line-height: 36.8px; letter-spacing: -0.67px; }
+.fs-800 { font-size: var(--fs-800); line-height: 36.8px; letter-spacing: -0.5px; }
 .fs-700 { font-size: var(--fs-700); line-height: 29px; letter-spacing: 0.53px; }
 .fs-600 { font-size: var(--fs-600); line-height: 18.5px; letter-spacing: -0.33px; }
 .fs-500 { font-size: var(--fs-500); line-height: 11px; }
@@ -273,12 +274,13 @@ select {
 @media (min-width: 35rem) {
     .fs-800 { line-height: 51.52px; letter-spacing: -0.93px; }
     .fs-700 { line-height: 36.8px; letter-spacing: 0.67px;}
-    .fs-600 { line-height: 25.76px; letter-spacing: -0.47px;}
+    .fs-600 { line-height: 25.76px; letter-spacing: 1px;}
 }
 
 .attribution {
     font-size: 11px;
     text-align: center;
+    margin-top: 1rem;
 }
 
 .attribution a {
@@ -289,6 +291,7 @@ select {
 /* Layout */
 
 .header {
+    min-width: 20.4rem;
     font-size: 1rem;
     letter-spacing: -0.53px;
     margin-top: 2.5rem;
@@ -296,5 +299,188 @@ select {
     margin-right: 1.5rem;
     justify-content: space-between;
     align-items: baseline;
-    border: 1px solid limegreen;
 }
+
+
+.header p {
+    letter-spacing: 1px;
+
+}
+
+.theme {
+    align-items: flex-end;
+}
+
+.redButton.horizTranslate2 {
+    transition: 0.1s linear;
+    transform: translateX(20px);
+    -webkit-transition: -webkit-transform 0.1s linear;
+    -webkit-transform: translateX(22px);
+}
+
+.redButton.horizTranslate3 { 
+    transition: 0.1s linear;
+    transform: translateX(40px);
+    -webkit-transition: -webkit-transform 0.1s linear;
+    -webkit-transform: translateX(44px);
+}
+
+.redButton.horizTranslate1 {
+    transition: 0.1s linear;
+    transform: translateX(0px);
+     -webkit-transition: -webkit-transform 0.1s linear;
+     -webkit-transform: translateX(0px);
+}
+
+#outerContainer {
+    position:relative;
+    width:111px;
+    height:98px;
+    background-color: hsl( var(--clr-main-bg-blue));
+    top: 1.9rem;
+}
+
+#buttonContainer {
+    background-color: #222D41;
+    width:71px;
+    height:28px;
+    position:relative;
+    left:20px; 
+    top:45px;
+    border-radius:14px;
+    
+}
+
+.redButton {
+    width:16px;
+    height:16px;
+    background-color: hsl( var(--clr-key-red-bg));
+    border-radius:8px;
+    position:relative;
+    top:6px;
+    left:6px;
+}
+
+#legendTextContainer {
+    left:22px;
+    display:inline-block;
+    position:absolute;
+    top:23px;
+    color:#ffffff;
+    font-size:10pt;
+    text-align:center;
+}
+
+.legendText {
+    display:inline-block;
+    width:20px;
+    padding-bottom:33px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.main {
+    margin-top: 1.5rem;
+}
+
+.main > .screen {
+    min-height: 88px;
+    background-color: hsl( var(--clr-screen-bg-blue));
+    color: hsl(var(--clr-text-white));
+    text-align: right;
+    padding-top: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+}
+
+@media (min-width: 35rem) {
+    .main > .screen {
+        min-height: 8rem;
+        padding-top: 2.5rem;
+    }
+}
+#screen {
+    padding-right: 1.5rem;
+}
+
+#key0 { grid-area: key0;}
+#key1 { grid-area: key1;}
+#key2 { grid-area: key2;}
+#key3 { grid-area: key3;}
+#key4 { grid-area: key4;}
+#key5 { grid-area: key5;}
+#key6 { grid-area: key6;}
+#key7 { grid-area: key7;}
+#key8 { grid-area: key8;}
+#key9 { grid-area: key9;}
+#keyDEL { grid-area: keyDEL;}
+#keyPlus { grid-area: keyPlus;}
+#keyMinus { grid-area: keyMinus;}
+#keyMultiply { grid-area: keyMultiply;}
+#keyDivide { grid-area: keyDivide;}
+#keyComma { grid-area: keyComma;}
+#keyRESET { grid-area: keyRESET;}
+#keyEqual { grid-area: keyEqual;}
+
+.keys {
+    background-color: hsl( var(--clr-screen-bg-blue));
+    border-radius: 10px;
+    padding: 1.5rem;
+    grid-template-areas: 
+    'key7 key8 key9 keyDEL'
+    'key4 key5 key6 keyPlus'
+    'key1 key2 key3 keyMinus'
+    'keyComma key0 keyDivide keyMultiply'
+    'keyRESET keyRESET keyEqual keyEqual';
+    gap: 0.8125rem;
+}
+
+.keys > button:active {
+    transform: translateY(2px);
+}
+
+.keyButtons {
+    font-size: var(--fs-600);
+    height: 4rem;
+    min-width: 3.75rem;
+    border-radius: 10px;
+    background-color: hsla(31, 24%, 89%, 1);
+    color: hsl( var(--clr-text-grayishBlue));
+    box-shadow: inset 0px -4px 0px #B3A497;
+    border: none;
+    cursor: pointer;
+}
+
+.keyDEL {
+    height: 4rem;
+    min-width: 3.75rem;
+    border-radius: 10px;
+    background-color: hsl( var(--clr-key-blue-bg));
+    box-shadow: inset 0px -4px 0px #414E73;
+    color: hsl( var(--clr-text-white));
+    border: none;
+    cursor: pointer;
+}
+
+.keyRESET {
+    background-color: hsl( var(--clr-key-blue-bg));
+    box-shadow: inset 0px -4px 0px #414E73;
+    color: hsl( var(--clr-text-white));
+
+}
+
+.keyEqual {
+    font-size: var(--fs-600);
+    background-color: hsl( var(--clr-key-red-bg));
+    color: hsl( var(--clr-text-white));
+    box-shadow: inset 0px -4px 0px #93261A;
+}
+
+.keyRESET, .keyEqual {
+    border-radius: 10px;
+    height: 4rem;
+    border: none;
+    cursor: pointer;
+}
+
+

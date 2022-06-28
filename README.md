@@ -108,6 +108,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+https://stackoverflow.com/questions/67729844/how-to-make-a-3-button-sliding-toggle-switch
+https://stackoverflow.com/users/15171903/deegee
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+This user deegee post a great solution for the toggle switch, it helps me a lot to do it !

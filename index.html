@@ -16,22 +16,37 @@
     <title>Frontend Mentor | Calculator app</title>
 </head>
 
-<body>
-    <header class="header flex">
-        <h1 class="text-white">calc</h1>
-        <p class="fs-500 uppercase text-white">theme</p>
-        <div class="toggle">
-            
-        </div>
-    </header>
-    <main class="container">
-
-
-
-
-
-    </main>
-
+<body id="body">
+    <div>
+        <header class="header flex">
+            <h1 class="text-white textColor">calc</h1>
+            <div class="theme flex">
+                <p class="fs-500 uppercase text-white textColor">theme</p>
+                
+                <div id="outerContainer">
+                    <div id="buttonContainer">
+                        <div id="toggleButton" class="redButton"></div>
+                    </div>
+                    
+                    <div id="legendTextContainer">
+                        <div class="legendText" onclick="theme_1()">1</div>
+                        <div class="legendText" onclick="theme_2()">2</div>
+                        <div class="legendText" onclick="theme_3()">3</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main container">
+            <div class="screen fs-800"><p class="textColor" id="screen">399,54</p></div>
+            <div class="keys grid">
+                    <button class="keyButtons textColor" id="key7">7</button><button class="keyButtons textColor" id="key8">8</button><button class="keyButtons textColor" id="key9">9</button><button class="keyDEL fs-600" id="keyDEL">DEL</button>
+                    <button class="keyButtons textColor" id="key4">4</button><button class="keyButtons textColor" id="key5">5</button><button class="keyButtons textColor" id="key6">6</button><button class="keyButtons textColor" id="keyPlus">+</button>
+                    <button class="keyButtons textColor" id="key1">1</button><button class="keyButtons textColor" id="key2">2</button><button class="keyButtons textColor" id="key3">3</button><button class="keyButtons textColor" id="keyMinus">-</button>
+                    <button class="keyButtons textColor" id="keyComma">.</button><button class="keyButtons textColor" id="key0">0</button><button class="keyButtons textColor" id="keyDivide">/</button><button class="keyButtons textColor" id="keyMultiply">x</button>
+                    <button class="keyRESET fs-600" id="keyRESET">RESET</button><button class="keyEqual" id="keyEqual">=</button>
+            </div>
+        </main>
+    </div>
     <footer class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
         Coded by <a href="https://github.com/CarvalhoVincent" target="_blank">Vincent CARVALHO</a>.
