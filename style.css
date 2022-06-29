@@ -178,32 +178,11 @@ select {
     gap: var(--gap, 1rem);
 }
 
-.d-block {
-    display: block;
-}
-
-.flow > *:where(:not(:first-child)) {
-    margin-top: var(--flow-space, 1rem);
-}
-
 .container {
     padding-inline: 2em;
     margin-inline: auto;
     max-width: 33.75rem;
 }
-
-.sr-only {
-  position: absolute; 
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px; 
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap; /* added line */
-  border: 0;
-}
-
 
 /* colors */
 
@@ -280,11 +259,11 @@ select {
 .attribution {
     font-size: 11px;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: hsl(186, 24%, 55%);
 }
 
 
@@ -301,7 +280,6 @@ select {
     align-items: baseline;
 }
 
-
 .header p {
     letter-spacing: 1px;
 
@@ -311,11 +289,18 @@ select {
     align-items: flex-end;
 }
 
+.redButton.horizTranslate1 {
+    transition: 0.1s linear;
+    transform: translateX(0px);
+     -webkit-transition: -webkit-transform 0.1s linear;
+     -webkit-transform: translateX(0px);
+}
+
 .redButton.horizTranslate2 {
     transition: 0.1s linear;
     transform: translateX(20px);
     -webkit-transition: -webkit-transform 0.1s linear;
-    -webkit-transform: translateX(22px);
+    -webkit-transform: translateX(21px);
 }
 
 .redButton.horizTranslate3 { 
@@ -325,11 +310,16 @@ select {
     -webkit-transform: translateX(44px);
 }
 
-.redButton.horizTranslate1 {
-    transition: 0.1s linear;
-    transform: translateX(0px);
-     -webkit-transition: -webkit-transform 0.1s linear;
-     -webkit-transform: translateX(0px);
+.hoverClass1:hover {
+    background-color: #F96B5B !important;
+}
+
+.hoverClass2:hover {
+    background-color: #FF8A38 !important;
+}
+
+.hoverClass3:hover {
+    background-color: #93FFF8 !important;
 }
 
 #outerContainer {
@@ -352,13 +342,16 @@ select {
 }
 
 .redButton {
-    width:16px;
-    height:16px;
+    width: 1.1rem;
+    height: 1.1rem;
     background-color: hsl( var(--clr-key-red-bg));
-    border-radius:8px;
+    border-radius: 50%;
+    border: none;
     position:relative;
-    top:6px;
+    top: 5px;
     left:6px;
+    z-index: 1000;
+    cursor: pointer;
 }
 
 #legendTextContainer {
@@ -439,6 +432,32 @@ select {
     transform: translateY(2px);
 }
 
+.hoverKeys1 {
+    box-shadow: inset 0px -4px 0px #B3A497 !important;
+}
+
+.hoverKeys2 {
+    background-color: hsl( var(--clr-key-yellow-bg)) !important;
+    box-shadow: inset 0px -4px 0px #A79E91 !important;
+}
+
+.hoverKeys3 {
+    background-color: hsl( var(--clr-key-darkViolet-bg)) !important;
+    box-shadow: inset 0px -4px 0px #881C9E !important;
+}
+
+.hoverKeys1:hover {
+    background-color: #FFFFFE !important;
+}
+
+.hoverKeys2:hover {
+    background-color: #FFFFFF !important;
+}
+
+.hoverKeys3:hover {
+    background-color: #6C34AC !important;
+}
+
 .keyButtons {
     font-size: var(--fs-600);
     height: 4rem;
@@ -449,15 +468,13 @@ select {
     box-shadow: inset 0px -4px 0px #B3A497;
     border: none;
     cursor: pointer;
+    
 }
 
 .keyDEL {
     height: 4rem;
     min-width: 3.75rem;
     border-radius: 10px;
-    background-color: hsl( var(--clr-key-blue-bg));
-    box-shadow: inset 0px -4px 0px #414E73;
-    color: hsl( var(--clr-text-white));
     border: none;
     cursor: pointer;
 }
@@ -466,14 +483,46 @@ select {
     background-color: hsl( var(--clr-key-blue-bg));
     box-shadow: inset 0px -4px 0px #414E73;
     color: hsl( var(--clr-text-white));
-
 }
+
+.reset1 {
+    background-color: #647198 !important;
+    box-shadow: inset 0px -4px 0px #414E73 !important;
+}
+
+.reset2 {
+    background-color: #378187 !important;
+    box-shadow: inset 0px -4px 0px #1B6066 !important;
+}
+
+.reset3 {
+    background-color: #56077C !important;
+    box-shadow: inset 0px -4px 0px #BE15F4 !important;
+}
+
+.reset1:hover {
+    background-color: #A2B2E1 !important;
+}
+
+.reset2:hover {
+    background-color: #62B5BC !important;
+}
+
+.reset3:hover {
+    background-color: #8631AF !important;
+}
+
+
 
 .keyEqual {
     font-size: var(--fs-600);
     background-color: hsl( var(--clr-key-red-bg));
     color: hsl( var(--clr-text-white));
     box-shadow: inset 0px -4px 0px #93261A;
+}
+
+.keyEqual:hover {
+    background-color: #F96B5B;
 }
 
 .keyRESET, .keyEqual {
@@ -483,4 +532,31 @@ select {
     cursor: pointer;
 }
 
+.equal1 {
+    background-color: #D03F2F !important;
+    box-shadow: inset 0px -4px 0px #93261A !important;
+}
+
+.equal1:hover {
+    background-color: #F96B5B !important;
+}
+
+.equal2 {
+    background-color: #C85402 !important;
+    box-shadow: inset 0px -4px 0px #873901 !important;
+}
+
+.equal2:hover {
+    background-color: #FF8A38 !important;
+}
+
+.equal3 {
+    background-color: #00DED0 !important;
+    box-shadow: inset 0px -4px 0px #6CF9F1 !important;
+    color: black !important;
+}
+
+.equal3:hover {
+    background-color: #93FFF8 !important;
+}
 
