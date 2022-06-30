@@ -129,3 +129,29 @@ function theme_3() {
 //    Calculator     //
 //-------------------//
 
+const screenElt = document.getElementById("screen");
+const entry = document.querySelectorAll('.key');
+let display = "";
+
+for(var keyPress of entry) {
+    keyPress.addEventListener('click', printScreen);
+    }
+
+    
+    function printScreen() {
+        let keyPress = this.innerText;
+        if (parseFloat(keyPress) >= 0 ) {
+            display = (display === "") ? keyPress.toString() : display + keyPress.toString();
+            screenElt.innerText = display;
+        } else if (keyPress === ".") {
+            display = (display === "") ? keyPress.toString() : display + keyPress.toString();
+            screenElt.innerText = display;
+        }
+        
+
+        else if (keyPress === "DEL") {
+            
+            console.log('test');
+            
+        }
+}
