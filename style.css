@@ -348,6 +348,7 @@ select {
     width: 1.1rem;
     height: 1.1rem;
     aspect-ratio: 1;
+    transform: 0;
     -moz-transform: translateY(-7px);
     background-color: hsl( var(--clr-key-red-bg));
     border-radius: 50%;
