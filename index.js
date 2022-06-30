@@ -159,7 +159,6 @@ for(var keyPress of entry) {
 }
 
 
-
 function storeSum() {
 
     for(var i = 0; i < 1; i++) {
@@ -167,40 +166,62 @@ function storeSum() {
         display = "";
     }
     for(var i = 1; i < 2; i++) {
+        result.push(display + "+");
+        display = "";
+    }
+};
+
+          
+function storeMinus() {
+    for(var i = 0; i < 1; i++) {
         result.push(display);
         display = "";
     }
-    sum([result[0], result[1]]);
-    screenElt.innerText = sum([result[0], result[1]]);
-    result.pop();
-    result = [sum([result[0], result[1]])];
-    console.log(result);
+    for(var i = 1; i < 2; i++) {
+        result.push(display + "-");
+        display = "";
+    }
+};     
+
+
+function storeMultiply() {
+    for(var i = 0; i < 1; i++) {
+        result.push(display);
+        display = "";
+    }
+    for(var i = 1; i < 2; i++) {
+        result.push(display + "*");
+        display = "";
+    }
+};       
+
+
+function storeDivide() {
+    for(var i = 0; i < 1; i++) {
+        result.push(display);
+        display = "";
+    }
+    for(var i = 1; i < 2; i++) {
+        result.push(display + "/");
+        display = "";
+    }
+};       
+
+          
+function displayResult() {
+
+    try {
+        eval(result.join(" "));
+    } catch(EvalError){  
+        screenElt.innerHTML = "SyntaxError";
+    } 
+
+    result.push(display);
+    var final = eval(result.join(" "));
+    final = Math.round((final + Number.EPSILON) * 10000000) / 10000000;
+    screenElt.innerText = final;
+    result = [];
+    display = "";
+    result.push(screenElt.innerText);          
 };
 
-function sum(input){
-             
-    if (toString.call(input) !== "[object Array]")
-       return false;
-         
-               var total =  0;
-               for(var i=0;i<input.length;i++)
-                 {                  
-                   if(isNaN(input[i])){
-                   continue;
-                    }
-                     total += Number(input[i]);
-
-                  }
-                  return total;
-};
-                
-        
-  
-
-                
-
-
-
-
-replace(/\./g, ",")
-replace(/\,/g, ".")

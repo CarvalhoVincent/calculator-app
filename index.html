@@ -37,13 +37,13 @@
             </div>
         </header>
         <main class="main container">
-            <div id="screen-bg" class="screen fs-800"><p class="textColor" id="screen"></p></div>
+            <div id="screen-bg" class="screen fs-800"><p class="textColor" id="screen">0</p></div>
             <div class="keys grid" id="keysBg">
                     <button class="key keyButtons hoverKeys1 textColor" id="key7">7</button><button class="key keyButtons hoverKeys1 textColor" id="key8">8</button><button class="key keyButtons hoverKeys1 textColor" id="key9">9</button><button class="key keyDEL keyRESET reset1 fs-600" id="keyDEL">DEL</button>
                     <button class="key keyButtons hoverKeys1 textColor" id="key4">4</button><button class="key keyButtons hoverKeys1 textColor" id="key5">5</button><button class="key keyButtons hoverKeys1 textColor" id="key6">6</button><button class="operators keyButtons hoverKeys1 textColor" id="keyPlus" onclick="storeSum()">+</button>
-                    <button class="key keyButtons hoverKeys1 textColor" id="key1">1</button><button class="key keyButtons hoverKeys1 textColor" id="key2">2</button><button class="key keyButtons hoverKeys1 textColor" id="key3">3</button><button class="operators keyButtons hoverKeys1 textColor" id="keyMinus" onclick="">-</button>
-                    <button class="key keyButtons hoverKeys1 textColor" id="keyComma">.</button><button class="key keyButtons hoverKeys1 textColor" id="key0">0</button><button class="operators keyButtons hoverKeys1 textColor" id="keyDivide">/</button><button class="operators keyButtons hoverKeys1 textColor" id="keyMultiply">x</button>
-                    <button class="key keyRESET reset1 fs-600" id="keyRESET">RESET</button><button class="keyEqual" id="keyEqual">=</button>
+                    <button class="key keyButtons hoverKeys1 textColor" id="key1">1</button><button class="key keyButtons hoverKeys1 textColor" id="key2">2</button><button class="key keyButtons hoverKeys1 textColor" id="key3">3</button><button class="operators keyButtons hoverKeys1 textColor" id="keyMinus" onclick="storeMinus()">-</button>
+                    <button class="key keyButtons hoverKeys1 textColor" id="keyComma">.</button><button class="key keyButtons hoverKeys1 textColor" id="key0">0</button><button class="operators keyButtons hoverKeys1 textColor" id="keyDivide" onclick="storeDivide()">/</button><button class="operators keyButtons hoverKeys1 textColor" id="keyMultiply" onclick="storeMultiply()">x</button>
+                    <button class="key keyRESET reset1 fs-600" id="keyRESET">RESET</button><button class="keyEqual" id="keyEqual" onclick="displayResult()">=</button>
             </div>
         </main>
     </div>
