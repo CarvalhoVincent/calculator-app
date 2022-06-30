@@ -131,27 +131,76 @@ function theme_3() {
 
 const screenElt = document.getElementById("screen");
 const entry = document.querySelectorAll('.key');
+const operators = document.querySelectorAll('.operators');
 let display = "";
+let result = [];
 
 for(var keyPress of entry) {
     keyPress.addEventListener('click', printScreen);
     }
 
-    
     function printScreen() {
         let keyPress = this.innerText;
         if (parseFloat(keyPress) >= 0 ) {
             display = (display === "") ? keyPress.toString() : display + keyPress.toString();
             screenElt.innerText = display;
         } else if (keyPress === ".") {
-            display = (display === "") ? keyPress.toString() : display + keyPress.toString();
+            display = (display === "") ? keyPress.toString("") : display + keyPress.toString("");
             screenElt.innerText = display;
+        } else if (keyPress === "DEL") {
+            screenElt.innerHTML = screenElt.innerHTML.slice(screenElt.length, -1);
+            display = screenElt.innerHTML;
+        } else if (keyPress === "RESET") {
+            display = "";
+            screenElt.innerHTML = display;
+            result = [];
         }
-        
-
-        else if (keyPress === "DEL") {
-            
-            console.log('test');
-            
-        }
+       
 }
+
+
+
+function storeSum() {
+
+    for(var i = 0; i < 1; i++) {
+        result.push(display);
+        display = "";
+    }
+    for(var i = 1; i < 2; i++) {
+        result.push(display);
+        display = "";
+    }
+    sum([result[0], result[1]]);
+    screenElt.innerText = sum([result[0], result[1]]);
+    result.pop();
+    result = [sum([result[0], result[1]])];
+    console.log(result);
+};
+
+function sum(input){
+             
+    if (toString.call(input) !== "[object Array]")
+       return false;
+         
+               var total =  0;
+               for(var i=0;i<input.length;i++)
+                 {                  
+                   if(isNaN(input[i])){
+                   continue;
+                    }
+                     total += Number(input[i]);
+
+                  }
+                  return total;
+};
+                
+        
+  
+
+                
+
+
+
+
+replace(/\./g, ",")
+replace(/\,/g, ".")
