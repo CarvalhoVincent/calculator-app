@@ -282,7 +282,6 @@ select {
 
 .header p {
     letter-spacing: 1px;
-
 }
 
 .theme {
@@ -312,6 +311,38 @@ select {
     -webkit-transform: translateX(44px);  
     -moz-transform: translateY(-7px) translateX(44px);
 }
+
+@media (max-width: 35rem) {
+    .redButton.horizTranslate1 {
+        transition: 0.1s linear;
+        transform: translateX(-7px);
+        -webkit-transition: -webkit-transform 0.1s linear;
+        -webkit-transform: translateX(-7px);
+        -moz-transform: translateY(-7px);
+    }
+
+    .redButton.horizTranslate2 {
+        transition: 0.1s linear;
+        transform: translateX(20px);
+        -webkit-transition: -webkit-transform 0.1s linear;
+        -webkit-transform: translateX(14px); 
+        -moz-transform: translateY(-7px) translateX(14px);
+    }
+    
+    .redButton.horizTranslate3 { 
+        transition: 0.1s linear;
+        transform: translateX(37px);
+        -webkit-transition: -webkit-transform 0.1s linear;
+        -webkit-transform: translateX(37px);  
+        -moz-transform: translateY(-7px) translateX(37px);
+    }
+
+    .redButton {
+        transform: translateX(-7px);
+        -moz-transform: translateY(-7px);
+    }
+}
+
 
 .hoverClass1:hover {
     background-color: #F96B5B !important;
@@ -353,6 +384,7 @@ select {
     background-color: hsl( var(--clr-key-red-bg));
     border-radius: 50%;
     border: none;
+    
     position:relative;
     top: 5px;
     left:6px;
