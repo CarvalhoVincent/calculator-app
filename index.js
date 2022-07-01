@@ -126,11 +126,7 @@ function theme_3() {
 }
 
 
-let light = window.matchMedia("(prefers-color-scheme: light)").matches;
 
-if (light) {
-    theme_2();
-}; 
 
 //-------------------//
 //    Calculator     //
