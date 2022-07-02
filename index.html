@@ -1,29 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="a calculator app" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="a calculator app">
-
-
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
 
     <title>Frontend Mentor | Calculator app</title>
-</head>
+  </head>
 
-<body id="body">
+  <body id="body">
     <div>
-        <header class="header flex">
-            <h1 class="text-white textColor">calc</h1>
-            <div class="theme flex">
-                <p class="fs-500 uppercase text-white textColor">theme</p>
-                
-                <div id="outerContainer">
+      <header class="header flex">
+        <h1 class="text-white textColor">calc</h1>
+        <div class="theme flex">
+          <label class="fs-500 uppercase text-white textColor" for="switch"
+            >theme</label
+          >
+
+          <!-- Rounded switch -->
+          <form id="switch" class="switch outerContainer">
+            <input
+              class="theme-radio"
+              type="radio"
+              name="theme"
+              value="1"
+              checked="true"
+            />
+            <input class="theme-radio" type="radio" name="theme" value="2" />
+            <input class="theme-radio" type="radio" name="theme" value="3" />
+            <span class="slider round"></span>
+          </form>
+
+          <!-- <div id="outerContainer">
                     <div id="buttonContainer">
                         <button id="toggleButton" class="redButton hoverClass1"><span class="sr-only">theme button</span></button>
                     </div>
@@ -33,25 +55,87 @@
                         <div class="legendText" onclick="theme_2()">2</div>
                         <div class="legendText" onclick="theme_3()">3</div>
                     </div>
-                </div>
-            </div>
-        </header>
-        <main class="main container">
-            <div id="screen-bg" class="screen fs-800"><p class="textColor" id="screen">0</p></div>
-            <div class="keys grid" id="keysBg">
-                    <button class="key keyButtons hoverKeys1 textColor" id="key7">7</button><button class="key keyButtons hoverKeys1 textColor" id="key8">8</button><button class="key keyButtons hoverKeys1 textColor" id="key9">9</button><button class="key keyDEL keyRESET reset1 fs-600" id="keyDEL">DEL</button>
-                    <button class="key keyButtons hoverKeys1 textColor" id="key4">4</button><button class="key keyButtons hoverKeys1 textColor" id="key5">5</button><button class="key keyButtons hoverKeys1 textColor" id="key6">6</button><button class="operators keyButtons hoverKeys1 textColor" id="keyPlus" onclick="storeSum()">+</button>
-                    <button class="key keyButtons hoverKeys1 textColor" id="key1">1</button><button class="key keyButtons hoverKeys1 textColor" id="key2">2</button><button class="key keyButtons hoverKeys1 textColor" id="key3">3</button><button class="operators keyButtons hoverKeys1 textColor" id="keyMinus" onclick="storeMinus()">-</button>
-                    <button class="key keyButtons hoverKeys1 textColor" id="keyComma">.</button><button class="key keyButtons hoverKeys1 textColor" id="key0">0</button><button class="operators keyButtons hoverKeys1 textColor" id="keyDivide" onclick="storeDivide()">/</button><button class="operators keyButtons hoverKeys1 textColor" id="keyMultiply" onclick="storeMultiply()">x</button>
-                    <button class="key keyRESET reset1 fs-600" id="keyRESET">RESET</button><button class="keyEqual" id="keyEqual" onclick="displayResult()">=</button>
-            </div>
-        </main>
+                </div> -->
+        </div>
+      </header>
+      <main class="main container">
+        <div id="screen-bg" class="screen fs-800">
+          <p class="textColor" id="screen">0</p>
+        </div>
+        <div class="keys grid" id="keysBg">
+          <button class="key keyButtons hoverKeys1 textColor" id="key7">
+            7</button
+          ><button class="key keyButtons hoverKeys1 textColor" id="key8">
+            8</button
+          ><button class="key keyButtons hoverKeys1 textColor" id="key9">
+            9</button
+          ><button class="key keyDEL keyRESET reset1 fs-600" id="keyDEL">
+            DEL
+          </button>
+          <button class="key keyButtons hoverKeys1 textColor" id="key4">
+            4</button
+          ><button class="key keyButtons hoverKeys1 textColor" id="key5">
+            5</button
+          ><button class="key keyButtons hoverKeys1 textColor" id="key6">
+            6</button
+          ><button
+            class="operators keyButtons hoverKeys1 textColor"
+            id="keyPlus"
+            onclick="storeSum()"
+          >
+            +
+          </button>
+          <button class="key keyButtons hoverKeys1 textColor" id="key1">
+            1</button
+          ><button class="key keyButtons hoverKeys1 textColor" id="key2">
+            2</button
+          ><button class="key keyButtons hoverKeys1 textColor" id="key3">
+            3</button
+          ><button
+            class="operators keyButtons hoverKeys1 textColor"
+            id="keyMinus"
+            onclick="storeMinus()"
+          >
+            -
+          </button>
+          <button class="key keyButtons hoverKeys1 textColor" id="keyComma">
+            .</button
+          ><button class="key keyButtons hoverKeys1 textColor" id="key0">
+            0</button
+          ><button
+            class="operators keyButtons hoverKeys1 textColor"
+            id="keyDivide"
+            onclick="storeDivide()"
+          >
+            /</button
+          ><button
+            class="operators keyButtons hoverKeys1 textColor"
+            id="keyMultiply"
+            onclick="storeMultiply()"
+          >
+            x
+          </button>
+          <button class="key keyRESET reset1 fs-600" id="keyRESET">RESET</button
+          ><button class="keyEqual" id="keyEqual" onclick="displayResult()">
+            =
+          </button>
+        </div>
+      </main>
     </div>
     <footer class="attribution">
-        <p class="textColor" style="color: white; display: inline;">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
-        <p class="textColor" style="color: white; display: inline;">Coded by <a href="https://github.com/CarvalhoVincent" target="_blank">Vincent CARVALHO</a>.</p>
+      <p class="textColor" style="color: white; display: inline">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >.
+      </p>
+      <p class="textColor" style="color: white; display: inline">
+        Coded by
+        <a href="https://github.com/CarvalhoVincent" target="_blank"
+          >Vincent CARVALHO</a
+        >.
+      </p>
     </footer>
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>
