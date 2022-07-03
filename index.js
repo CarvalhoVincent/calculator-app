@@ -16,39 +16,84 @@ const themeRadioBtns = document.querySelectorAll(".theme-radio");
 //      Themes       //
 //-------------------//
 
+
+
+
+var theme8;
+
+
+theme8 = {
+    body: "hsl-bg-toggle-black",
+    bgKeys: 5,
+    type: "Gas Giant",
+    radius: 69911,
+    sizeRank: 1
+};
+
+function getThemeInfo (theme) {
+    return theme.body + theme.bgKeys;
+};
+
+console.log(getThemeInfo(theme8));
+
+
+
+
+
+
+
+
+
+var theme1;
+
+theme1 = {
+    body: "hsl( var(--clr-toggle-bg-violet))",
+    keysBg: "hsl( var(--clr-toggle-bg-violet))",
+    
+  };
+  
+ 
+  const theme2 = {
+    body: "hsl( var(--clr-toggle-bg-violet))",
+    keysBg: "hsl( var(--clr-main-bg-blue))",
+ 
+  };
+  
+  const theme3 = {
+    body: "hsl( var(--clr-toggle-bg-violet))",
+    keysBg: "hsl( var(--clr-text-grayishBlue))",
+
+  };
+
+
 // the change event fires when you select a radio button
 // make sure the change the theme_1, theme_2, theme_3 to changeTheme
 // when you refactor the code
+
 themeRadioBtns.forEach((button) => {
-  if (button.value == "1") button.addEventListener("change", theme_1);
-  if (button.value == "2") button.addEventListener("change", theme_2);
-  if (button.value == "3") button.addEventListener("change", theme_3);
-});
+    if (button.value == "1") button.addEventListener("change", changeTheme);
+    if (button.value == "2") button.addEventListener("change", changeTheme);
+    if (button.value == "3") button.addEventListener("change", changeTheme);
+  });
 
 // you can declare your 3 themes as an object like this
 // then you can say theme1.screenBg to access the variables
-const theme1 = {
-  body: "hsl( var(--clr-main-bg-blue))",
-  text: "hsl( var(--clr-text-white))",
-  keyButtonText: "hsl( var(--clr-text-grayishBlue))",
-  screenBg: "hsl( var(--clr-screen-bg-blue))",
-  keyButtonBg: "hsl( var(--clr-screen-bg-blue))",
-};
 
-const theme2 = {
-  // theme 2
-};
 
-const theme3 = {
-  //theme 3
-};
+
 
 // try to simplify these theme toggle functions into 1 function that takes a theme as an arguement
 // you can declare the color names as objects above
 function changeTheme(theme) {
+    
+
   // you can put the theme object you declared up top and then use the variables
   // to change your theme for example
-  body.style.backgroundColor = theme.body;
+    return body.style.backgroundColor = theme.body,
+    keysBg.style.backgroundColor = theme.keysBg;
+
+ 
+
 
   // put the other things you want to change here
 }
@@ -163,11 +208,11 @@ function theme_3() {
   keysBg.style.backgroundColor = "hsl( var(--clr-toggle-bg-violet))";
 }
 
-let light = window.matchMedia("(prefers-color-scheme: light)").matches;
+// let light = window.matchMedia("(prefers-color-scheme: light)").matches;
 
-if (light) {
-  theme_2();
-}
+// if (light) {
+//   theme_2();
+// }
 
 //-------------------//
 //    Calculator     //
