@@ -66,24 +66,15 @@ theme1 = {
   };
 
 
-// the change event fires when you select a radio button
-// make sure the change the theme_1, theme_2, theme_3 to changeTheme
-// when you refactor the code
-
-themeRadioBtns.forEach((button) => {
-    if (button.value == "1") button.addEventListener("change", changeTheme);
-    if (button.value == "2") button.addEventListener("change", changeTheme);
-    if (button.value == "3") button.addEventListener("change", changeTheme);
-  });
-
-// you can declare your 3 themes as an object like this
-// then you can say theme1.screenBg to access the variables
 
 
+// themeRadioBtns.forEach((button) => {
+//     if (button.value == "1") button.addEventListener("change", changeTheme);
+//     if (button.value == "2") button.addEventListener("change", changeTheme);
+//     if (button.value == "3") button.addEventListener("change", changeTheme);
+//   });
 
 
-// try to simplify these theme toggle functions into 1 function that takes a theme as an arguement
-// you can declare the color names as objects above
 function changeTheme(theme) {
     
 
