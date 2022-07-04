@@ -729,7 +729,7 @@ select {
   width: 90px;
   height: 24px;
   border-radius: 24px;
-  background-color: white;
+  background-color: hsl(var(--clr-toggle-bg-blue));
 }
 
 input[type="radio"] {
@@ -750,7 +750,7 @@ input[type="radio"]:before {
 }
 
 input[type="radio"]:checked:before {
-  background: orange;
+  background: hsl(var(--clr-key-red-bg));
 }
 
 label {

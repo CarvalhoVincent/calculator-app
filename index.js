@@ -1,209 +1,134 @@
-let toggleSwitch = document.getElementsByClassName("redButton")[0];
-const outerContainer = document.getElementById("outerContainer");
-const buttonContainer = document.getElementById("buttonContainer");
-const legendContainer = document.getElementById("legendTextContainer");
-const toggleButton = document.getElementById("toggleButton");
+const outerContainer = document.getElementById("switch");
 const body = document.getElementById("body");
-let textColor = document.getElementsByClassName("textColor");
+const textColor = document.getElementsByClassName("textColor");
 let keyButtons = document.getElementsByClassName("keyButtons");
 let keyReset = document.getElementsByClassName("keyRESET");
 let keyEqual = document.getElementsByClassName("keyEqual")[0];
 const screenBg = document.getElementById("screen-bg");
 const keysBg = document.getElementById("keysBg");
-const themeRadioBtns = document.querySelectorAll(".theme-radio");
+const themeRadioBtns = document.getElementsByClassName("theme-radio");
+
 
 //-------------------//
 //      Themes       //
 //-------------------//
 
 
-
-
-var theme8;
-
-
-theme8 = {
-    body: "hsl-bg-toggle-black",
-    bgKeys: 5,
-    type: "Gas Giant",
-    radius: 69911,
-    sizeRank: 1
+var theme1 = {
+    body: "hsl( var(--clr-main-bg-blue))",
+    keysBg: "hsl( var(--clr-screen-bg-blue))",
+    outerContainer: "hsl( var(--clr-toggle-bg-blue))",
+    screenBg: "hsl( var(--clr-screen-bg-blue))",
+    textColor() { 
+        for (var i = 0; i < textColor.length; i++) {
+        textColor[i].style.color = "hsl( var(--clr-text-white))"
+    }},
+    keyButtons() {
+        for(var i=0; i< keyButtons.length; i++){
+            keyButtons[i].style.color = "hsl( var(--clr-text-grayishBlue))";
+            keyButtons[i].classList.add('hoverKeys1');
+            keyButtons[i].classList.remove('hoverKeys2');
+            keyButtons[i].classList.remove('hoverKeys3');
+        }
+    },  
+    keyReset() {
+        for(var i=0; i< keyReset.length; i++){
+            keyReset[i].classList.add('reset1');
+            keyReset[i].classList.remove('reset2');
+            keyReset[i].classList.remove('reset3');
+        }
+    },
+    keyEqual() {
+        keyEqual.classList.add('equal1');
+        keyEqual.classList.remove('equal2');
+        keyEqual.classList.remove('equal3');
+    }
 };
 
-function getThemeInfo (theme) {
-    return theme.body + theme.bgKeys;
+ 
+var theme2 = {
+    body: "hsl( var(--clr-main-bg-gray))",
+    keysBg: "hsl( var(--clr-toggle-bg-red))",
+    outerContainer: "hsl( var(--clr-toggle-bg-red))",
+    screenBg: "hsl( var(--clr-screen-bg-light-gray))",
+    textColor() { 
+        for (var i = 0; i < textColor.length; i++) {
+        textColor[i].style.color = "hsl( var(--clr-text-grayishYellow))"
+    }},
+    keyButtons() {
+        for(var i=0; i< keyButtons.length; i++){
+            keyButtons[i].classList.add('hoverKeys2');
+            keyButtons[i].classList.remove('hoverKeys1');
+            keyButtons[i].classList.remove('hoverKeys3');
+        }
+    },  
+    keyReset() {
+        for(var i=0; i< keyReset.length; i++){
+            keyReset[i].classList.add('reset2');
+            keyReset[i].classList.remove('reset1');
+            keyReset[i].classList.remove('reset3');
+        }
+    },
+    keyEqual() {
+        keyEqual.classList.add('equal2');
+        keyEqual.classList.remove('equal1');
+        keyEqual.classList.remove('equal3');
+    }
 };
 
-console.log(getThemeInfo(theme8));
-
-
-
-
-
-
-
-
-
-var theme1;
-
-theme1 = {
-    body: "hsl( var(--clr-toggle-bg-violet))",
+  
+var theme3 = {
+    body: "hsl( var(--clr-main-bg-violet))",
     keysBg: "hsl( var(--clr-toggle-bg-violet))",
-    
-  };
-  
- 
-  const theme2 = {
-    body: "hsl( var(--clr-toggle-bg-violet))",
-    keysBg: "hsl( var(--clr-main-bg-blue))",
- 
-  };
-  
-  const theme3 = {
-    body: "hsl( var(--clr-toggle-bg-violet))",
-    keysBg: "hsl( var(--clr-text-grayishBlue))",
+    outerContainer: "hsl( var(--clr-toggle-bg-violet))",
+    screenBg: "hsl( var(--clr-toggle-bg-violet))",
+    textColor() { 
+        for (var i = 0; i < textColor.length; i++) {
+            textColor[i].style.color = "hsl( var(--clr-text-lightYellow))"
+        }
+    },
+    keyButtons() {
+        for(var i=0; i< keyButtons.length; i++){
+            keyButtons[i].classList.add('hoverKeys3');
+            keyButtons[i].classList.remove('hoverKeys2');
+            keyButtons[i].classList.remove('hoverKeys1');
+        }
+    },  
+    keyReset() {
+        for(var i=0; i< keyReset.length; i++){
+            keyReset[i].classList.add('reset3');
+            keyReset[i].classList.remove('reset2');
+            keyReset[i].classList.remove('reset1');
+        }
+    },
+    keyEqual() {
+        keyEqual.classList.add('equal3');
+        keyEqual.classList.remove('equal2');
+        keyEqual.classList.remove('equal1');
+    }
+};
 
-  };
-
-
-
-
-// themeRadioBtns.forEach((button) => {
-//     if (button.value == "1") button.addEventListener("change", changeTheme);
-//     if (button.value == "2") button.addEventListener("change", changeTheme);
-//     if (button.value == "3") button.addEventListener("change", changeTheme);
-//   });
 
 
 function changeTheme(theme) {
     
-
-  // you can put the theme object you declared up top and then use the variables
-  // to change your theme for example
-    return body.style.backgroundColor = theme.body,
-    keysBg.style.backgroundColor = theme.keysBg;
-
- 
-
-
-  // put the other things you want to change here
+    return  body.style.backgroundColor = theme.body,
+            keysBg.style.backgroundColor = theme.keysBg,
+            outerContainer.style.backgroundColor = theme.outerContainer,
+            screenBg.style.backgroundColor = theme.screenBg,
+            theme.textColor(),
+            theme.keyButtons(),
+            theme.keyReset(),
+            theme.keyEqual();
 }
 
-function theme_1() {
-  console.log("clicked");
-  //   toggleSwitch.classList.add("horizTranslate1");
-  //   toggleSwitch.classList.remove("horizTranslate2");
-  //   toggleSwitch.classList.remove("horizTranslate3");
-  //   toggleSwitch.classList.add("hoverClass1");
-  //   toggleSwitch.classList.remove("hoverClass2");
-  //   toggleSwitch.classList.remove("hoverClass3");
-  body.style.backgroundColor = "hsl( var(--clr-main-bg-blue))";
-  //   outerContainer.style.backgroundColor = "hsl( var(--clr-main-bg-blue))";
-  //   buttonContainer.style.backgroundColor = "hsl( var(--clr-toggle-bg-blue))";
-  //   legendContainer.style.color = "hsl( var(--clr-text-white))";
-  //   toggleButton.style.backgroundColor = "hsl( var(--clr-key-red-bg))";
 
-  for (var i = 0; i < textColor.length; i++) {
-    textColor[i].style.color = "hsl( var(--clr-text-white))";
-  }
+let light = window.matchMedia("(prefers-color-scheme: light)").matches;
 
-  for (var i = 0; i < keyButtons.length; i++) {
-    keyButtons[i].style.color = "hsl( var(--clr-text-grayishBlue))";
-    keyButtons[i].classList.add("hoverKeys1");
-    keyButtons[i].classList.remove("hoverKeys2");
-    keyButtons[i].classList.remove("hoverKeys3");
-  }
-
-  for (var i = 0; i < keyReset.length; i++) {
-    keyReset[i].classList.add("reset1");
-    keyReset[i].classList.remove("reset2");
-    keyReset[i].classList.remove("reset3");
-  }
-
-  keyEqual.classList.add("equal1");
-  keyEqual.classList.remove("equal2");
-  keyEqual.classList.remove("equal3");
-  screenBg.style.backgroundColor = "hsl( var(--clr-screen-bg-blue))";
-  keysBg.style.backgroundColor = "hsl( var(--clr-screen-bg-blue))";
+if (light) {
+   changeTheme(theme2);
+   themeRadioBtns[1].checked = true;
 }
-
-function theme_2() {
-  //   toggleSwitch.classList.add("horizTranslate2");
-  //   toggleSwitch.classList.remove("horizTranslate3");
-  //   toggleSwitch.classList.remove("horizTranslate1");
-  //   toggleSwitch.classList.add("hoverClass2");
-  //   toggleSwitch.classList.remove("hoverClass1");
-  //   toggleSwitch.classList.remove("hoverClass3");
-  body.style.backgroundColor = "hsl( var(--clr-main-bg-gray))";
-  //   outerContainer.style.backgroundColor = "hsl( var(--clr-main-bg-gray))";
-  //   buttonContainer.style.backgroundColor = "hsl( var(--clr-toggle-bg-red))";
-  //   legendContainer.style.color = "hsl( var(--clr-text-grayishYellow))";
-  //   toggleButton.style.backgroundColor = "hsl( var(--clr-key-redish-bg))";
-
-  for (var i = 0; i < textColor.length; i++) {
-    textColor[i].style.color = "hsl( var(--clr-text-grayishYellow))";
-  }
-
-  for (var i = 0; i < keyButtons.length; i++) {
-    keyButtons[i].classList.add("hoverKeys2");
-    keyButtons[i].classList.remove("hoverKeys1");
-    keyButtons[i].classList.remove("hoverKeys3");
-  }
-
-  for (var i = 0; i < keyReset.length; i++) {
-    keyReset[i].classList.add("reset2");
-    keyReset[i].classList.remove("reset1");
-    keyReset[i].classList.remove("reset3");
-  }
-
-  keyEqual.classList.add("equal2");
-  keyEqual.classList.remove("equal1");
-  keyEqual.classList.remove("equal3");
-  screenBg.style.backgroundColor = "hsl( var(--clr-screen-bg-light-gray))";
-  keysBg.style.backgroundColor = "hsl( var(--clr-toggle-bg-red))";
-}
-
-function theme_3() {
-  //   toggleSwitch.classList.add("horizTranslate3");
-  //   toggleSwitch.classList.remove("horizTranslate2");
-  //   toggleSwitch.classList.remove("horizTranslate1");
-  //   toggleSwitch.classList.add("hoverClass3");
-  //   toggleSwitch.classList.remove("hoverClass2");
-  //   toggleSwitch.classList.remove("hoverClass1");
-  body.style.backgroundColor = "hsl( var(--clr-main-bg-violet))";
-  //   outerContainer.style.backgroundColor = "hsl( var(--clr-main-bg-violet))";
-  //   buttonContainer.style.backgroundColor = "hsl( var(--clr-toggle-bg-violet))";
-  //   legendContainer.style.color = "hsl( var(--clr-text-lightYellow))";
-  //   toggleButton.style.backgroundColor = "hsl( var(--clr-key-pureCyan-bg))";
-
-  for (var i = 0; i < textColor.length; i++) {
-    textColor[i].style.color = "hsl( var(--clr-text-lightYellow))";
-  }
-
-  for (var i = 0; i < keyButtons.length; i++) {
-    keyButtons[i].classList.add("hoverKeys3");
-    keyButtons[i].classList.remove("hoverKeys2");
-    keyButtons[i].classList.remove("hoverKeys1");
-  }
-
-  for (var i = 0; i < keyReset.length; i++) {
-    keyReset[i].classList.add("reset3");
-    keyReset[i].classList.remove("reset1");
-    keyReset[i].classList.remove("reset2");
-  }
-
-  keyEqual.classList.add("equal3");
-  keyEqual.classList.remove("equal2");
-  keyEqual.classList.remove("equal1");
-  screenBg.style.backgroundColor = "hsl( var(--clr-toggle-bg-violet))";
-  keysBg.style.backgroundColor = "hsl( var(--clr-toggle-bg-violet))";
-}
-
-// let light = window.matchMedia("(prefers-color-scheme: light)").matches;
-
-// if (light) {
-//   theme_2();
-// }
 
 //-------------------//
 //    Calculator     //
@@ -297,4 +222,4 @@ function displayResult() {
   result = [];
   display = "";
   result.push(screenElt.innerText);
-}
+};
